@@ -9,7 +9,8 @@
       (function() {
         let theme;
         try {
-          theme = localStorage.getItem('theme');
+          // Resetting key to force dark mode default for returning users
+          theme = localStorage.getItem('portfolio_theme');
         } catch (e) { }
         
         // 사용자가 명시적으로 설정한 값이 없으면 'dark' 모드로 시작 (개발자 포트폴리오 권장)
