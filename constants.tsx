@@ -348,8 +348,8 @@ export const PROJECTS_DATA: Project[] = [
       tags: ['조직문화 개선', '협업 프로세스', 'Agile', '소통 활성화'],
       thumbnailImage: `data:image/svg+xml;base64,${toBase64(siloSvg)}`,
       detailImages: [
-         { url: getDetailImg('타운홀 미팅'), caption: '전사 타운홀 미팅' },
-         { url: getDetailImg('협업 툴 가이드'), caption: '협업 가이드라인' }
+         { url: 'https://lh3.googleusercontent.com/d/1dTQ4sl6abbaEU5rhhA5vwuqtwSGToogU', caption: '데일리 스크럼 기대효과 발표 장표' },
+         { url: 'https://lh3.googleusercontent.com/d/1SYjGNR5ccFkz356uod8Z0NZqZKcIvblj', caption: '인사이트 공유 미팅' }
       ],
       details: [
         '소개, 기간, 역할: Silo Effect 타파 및 협업 문화 조성 프로젝트 (2025.3 ~ 2025.8, 스크럼 리딩)',
