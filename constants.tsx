@@ -9,22 +9,57 @@ const toBase64 = (str: string) => {
     }
 };
 
-// Helper for Detail Image Placeholders (Fallback)
+// Helper for Detail Image Placeholders (Fallback) - Text Size Increased
 const getDetailImg = (text: string) => `data:image/svg+xml;base64,${toBase64(`
 <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
   <rect width="800" height="450" fill="#f8fafc"/>
-  <rect x="20" y="20" width="760" height="410" rx="10" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 8"/>
-  <path d="M400 180 L400 220 M380 200 L420 200" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
-  <text x="400" y="270" font-family="sans-serif" font-size="20" fill="#64748b" text-anchor="middle" font-weight="bold">${text}</text>
-  <text x="400" y="300" font-family="sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Detail Image Area (16:9)</text>
+  <rect x="20" y="20" width="760" height="410" rx="20" fill="none" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="16 16"/>
+  <path d="M400 150 L400 210 M370 180 L430 180" stroke="#cbd5e1" stroke-width="8" stroke-linecap="round"/>
+  <text x="400" y="280" font-family="sans-serif" font-size="48" fill="#64748b" text-anchor="middle" font-weight="bold">${text}</text>
+  <text x="400" y="330" font-family="sans-serif" font-size="24" fill="#94a3b8" text-anchor="middle">Detail Image (16:9)</text>
 </svg>
 `)}`;
 
 // ==========================================
-// High-Quality Abstract Generative SVGs
+// High-Quality Abstract Generative SVGs (Enhanced Visibility)
 // ==========================================
 
-// 1. Bootcamp (Growth, Coding, Structure) - Blue & Green Gradients
+// 0. (New) Silo Prevention (Collaboration, Connection)
+const siloSvg = `
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad_silo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4c1d95;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5b21b6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow_silo">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_silo)"/>
+  
+  <!-- Central Hub -->
+  <circle cx="400" cy="225" r="60" fill="none" stroke="#a78bfa" stroke-width="4" stroke-dasharray="10 5"/>
+  <circle cx="400" cy="225" r="30" fill="#ddd6fe" filter="url(#glow_silo)"/>
+  
+  <!-- Connecting Lines -->
+  <path d="M400 225 L200 120" stroke="#c4b5fd" stroke-width="4" opacity="0.6"/>
+  <path d="M400 225 L600 120" stroke="#c4b5fd" stroke-width="4" opacity="0.6"/>
+  <path d="M400 225 L200 330" stroke="#c4b5fd" stroke-width="4" opacity="0.6"/>
+  <path d="M400 225 L600 330" stroke="#c4b5fd" stroke-width="4" opacity="0.6"/>
+  
+  <!-- Satellite Nodes -->
+  <circle cx="200" cy="120" r="25" fill="#8b5cf6"/>
+  <circle cx="600" cy="120" r="25" fill="#8b5cf6"/>
+  <circle cx="200" cy="330" r="25" fill="#8b5cf6"/>
+  <circle cx="600" cy="330" r="25" fill="#8b5cf6"/>
+  
+  <!-- Text -->
+  <text x="400" y="400" font-family="sans-serif" font-size="42" fill="#ede9fe" text-anchor="middle" font-weight="bold" letter-spacing="2">COLLABORATION</text>
+</svg>`;
+
+// 1. Bootcamp (Growth, Coding, Structure) - Text & Icon Upscaled
 const bootcampSvg = `
 <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -37,31 +72,65 @@ const bootcampSvg = `
       <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
       <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
   <rect width="800" height="450" fill="url(#grad1)"/>
   
-  <!-- Abstract Code Blocks -->
-  <rect x="100" y="80" width="400" height="280" rx="8" fill="#1e293b" stroke="#334155" stroke-width="2"/>
-  <circle cx="130" cy="110" r="6" fill="#ef4444"/>
-  <circle cx="150" cy="110" r="6" fill="#f59e0b"/>
-  <circle cx="170" cy="110" r="6" fill="#22c55e"/>
+  <!-- Abstract Code Blocks - Made Larger -->
+  <rect x="80" y="60" width="480" height="330" rx="16" fill="#1e293b" stroke="#334155" stroke-width="4"/>
+  <circle cx="120" cy="100" r="10" fill="#ef4444"/>
+  <circle cx="150" cy="100" r="10" fill="#f59e0b"/>
+  <circle cx="180" cy="100" r="10" fill="#22c55e"/>
   
-  <!-- Rising Graph Lines -->
-  <path d="M150 300 L250 250 L350 280 L550 150" fill="none" stroke="url(#grad_blue)" stroke-width="4" filter="url(#glow)"/>
-  <circle cx="550" cy="150" r="8" fill="#60a5fa" filter="url(#glow)"/>
+  <!-- Rising Graph Lines - Thicker -->
+  <path d="M150 320 L280 240 L380 290 L600 120" fill="none" stroke="url(#grad_blue)" stroke-width="8" filter="url(#glow)"/>
+  <circle cx="600" cy="120" r="14" fill="#60a5fa" filter="url(#glow)"/>
   
-  <!-- Floating Elements -->
-  <rect x="500" y="250" width="180" height="120" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="2" opacity="0.9"/>
-  <text x="590" y="315" font-family="monospace" font-size="24" fill="#34d399" text-anchor="middle" filter="url(#glow)">&lt;Growth/&gt;</text>
+  <!-- Floating Elements - Larger Text -->
+  <rect x="480" y="240" width="240" height="140" rx="12" fill="#0f172a" stroke="#10b981" stroke-width="3" opacity="0.9"/>
+  <text x="600" y="325" font-family="monospace" font-size="42" fill="#34d399" text-anchor="middle" font-weight="bold" filter="url(#glow)">&lt;Growth/&gt;</text>
   
   <!-- Grid -->
-  <path d="M100 150 H500 M100 200 H500 M100 250 H500" stroke="#334155" stroke-width="1" stroke-dasharray="4 4"/>
+  <path d="M80 160 H600 M80 260 H600" stroke="#334155" stroke-width="2" stroke-dasharray="8 8"/>
 </svg>`;
 
-// 2. B2G Proposal (Strategy, Document, Impact) - Navy & Gold
+// 2. SOP (Structure, Workflow) - Text & Nodes Upscaled
+const sopSvg = `
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad_sop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#334155;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#grad_sop)"/>
+  
+  <!-- Workflow Nodes - Larger -->
+  <rect x="100" y="180" width="160" height="90" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="4"/>
+  <rect x="320" y="180" width="160" height="90" rx="8" fill="#1e293b" stroke="#818cf8" stroke-width="4"/>
+  <rect x="540" y="180" width="160" height="90" rx="8" fill="#1e293b" stroke="#a5b4fc" stroke-width="4"/>
+  
+  <!-- Connecting Arrows - Thicker -->
+  <path d="M260 225 H320" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="8 4"/>
+  <path d="M480 225 H540" stroke="#cbd5e1" stroke-width="4" stroke-dasharray="8 4"/>
+  
+  <!-- Checklist Icon - Larger -->
+  <rect x="350" y="50" width="100" height="120" fill="#f8fafc" opacity="0.1"/>
+  <rect x="365" y="70" width="70" height="8" rx="4" fill="#6366f1"/>
+  <rect x="365" y="95" width="50" height="8" rx="4" fill="#cbd5e1"/>
+  <rect x="365" y="120" width="60" height="8" rx="4" fill="#cbd5e1"/>
+  
+  <!-- Gear Icon - Larger -->
+  <circle cx="700" cy="80" r="40" stroke="#6366f1" stroke-width="6" fill="none" stroke-dasharray="12 8" opacity="0.6"/>
+  <circle cx="700" cy="80" r="14" fill="#818cf8"/>
+
+  <!-- Text - Much Larger -->
+  <text x="400" y="380" font-family="monospace" font-size="52" fill="#a5b4fc" text-anchor="middle" font-weight="bold" letter-spacing="2">SYSTEM &amp; PROCESS</text>
+</svg>`;
+
+// 3. Proposal (Document) - Icons Upscaled
 const proposalSvg = `
 <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -76,25 +145,25 @@ const proposalSvg = `
   </defs>
   <rect width="800" height="450" fill="url(#bg_prop)"/>
   
-  <!-- Abstract Document Stack -->
-  <path d="M250 100 L550 100 L550 350 L250 350 Z" fill="#1e40af" opacity="0.5" transform="translate(20, 20)"/>
-  <path d="M250 100 L550 100 L550 350 L250 350 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- Document - Larger -->
+  <path d="M220 80 L580 80 L580 370 L220 370 Z" fill="#1e40af" opacity="0.5" transform="translate(25, 25)"/>
+  <path d="M220 80 L580 80 L580 370 L220 370 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="3"/>
   
-  <!-- Text Lines -->
-  <rect x="300" y="160" width="200" height="12" rx="2" fill="#94a3b8"/>
-  <rect x="300" y="190" width="200" height="8" rx="2" fill="#e2e8f0"/>
-  <rect x="300" y="210" width="180" height="8" rx="2" fill="#e2e8f0"/>
-  <rect x="300" y="230" width="190" height="8" rx="2" fill="#e2e8f0"/>
+  <!-- Text Lines - Thicker & Larger -->
+  <rect x="280" y="150" width="240" height="20" rx="4" fill="#94a3b8"/>
+  <rect x="280" y="200" width="260" height="12" rx="4" fill="#e2e8f0"/>
+  <rect x="280" y="230" width="240" height="12" rx="4" fill="#e2e8f0"/>
+  <rect x="280" y="260" width="250" height="12" rx="4" fill="#e2e8f0"/>
   
-  <!-- Target / Success Icon -->
-  <circle cx="580" cy="300" r="60" fill="url(#gold_grad)" opacity="0.9"/>
-  <path d="M555 300 L575 320 L605 280" fill="none" stroke="#1e3a8a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Success Icon - Much Larger -->
+  <circle cx="620" cy="320" r="80" fill="url(#gold_grad)" opacity="0.9" stroke="#fff" stroke-width="4"/>
+  <path d="M585 320 L615 350 L655 290" fill="none" stroke="#1e3a8a" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
   
   <!-- Decorative Elements -->
   <circle cx="100" cy="50" r="150" fill="url(#gold_grad)" opacity="0.05"/>
 </svg>`;
 
-// 3. Hackathon (Hardware, Connection, Circuit) - Dark & Cyan
+// 4. Hackathon - Text Upscaled
 const hackathonSvg = `
 <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -106,23 +175,22 @@ const hackathonSvg = `
   <rect width="800" height="450" fill="url(#grad_hack)"/>
   
   <!-- Circuit Lines -->
-  <path d="M0 225 H100 L150 150 H300 L350 225 H800" fill="none" stroke="#06b6d4" stroke-width="2" opacity="0.3"/>
-  <path d="M0 250 H120 L170 300 H400 L450 250 H800" fill="none" stroke="#0891b2" stroke-width="2" opacity="0.3"/>
+  <path d="M0 225 H100 L150 150 H300 L350 225 H800" fill="none" stroke="#06b6d4" stroke-width="4" opacity="0.4"/>
+  <path d="M0 250 H120 L170 300 H400 L450 250 H800" fill="none" stroke="#0891b2" stroke-width="4" opacity="0.4"/>
   
-  <!-- Central Chip/Badge -->
-  <rect x="250" y="125" width="300" height="200" rx="16" fill="#1f2937" stroke="#06b6d4" stroke-width="2"/>
-  <rect x="300" y="175" width="200" height="100" fill="#111827"/>
+  <!-- Central Chip - Larger -->
+  <rect x="200" y="100" width="400" height="250" rx="20" fill="#1f2937" stroke="#06b6d4" stroke-width="4"/>
+  <rect x="250" y="160" width="300" height="130" fill="#111827"/>
   
-  <!-- Glowing Text -->
-  <text x="400" y="235" font-family="sans-serif" font-weight="bold" font-size="32" fill="#22d3ee" text-anchor="middle" letter-spacing="4">HACKATHON</text>
+  <!-- Glowing Text - Much Larger -->
+  <text x="400" y="240" font-family="sans-serif" font-weight="bold" font-size="56" fill="#22d3ee" text-anchor="middle" letter-spacing="6">HACKATHON</text>
   
   <!-- Nodes -->
-  <circle cx="150" cy="150" r="4" fill="#06b6d4"/>
-  <circle cx="350" cy="225" r="4" fill="#06b6d4"/>
-  <circle cx="600" cy="100" r="40" fill="#06b6d4" opacity="0.1"/>
+  <circle cx="150" cy="150" r="6" fill="#06b6d4"/>
+  <circle cx="350" cy="225" r="6" fill="#06b6d4"/>
 </svg>`;
 
-// 4. Premium CEO Education (UPDATED) - Luxury Gold & Black
+// 5. Premium Edu - Text Upscaled
 const premiumEduSvg = `
 <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -138,26 +206,21 @@ const premiumEduSvg = `
   </defs>
   <rect width="800" height="450" fill="url(#grad_luxury)"/>
   
-  <!-- Abstract Podium/Steps -->
-  <path d="M200 350 L600 350 L550 250 L250 250 Z" fill="#292524" stroke="#44403c" stroke-width="1"/>
-  <path d="M250 250 L550 250 L500 150 L300 150 Z" fill="#44403c" stroke="#57534e" stroke-width="1"/>
+  <!-- Abstract Podium - Larger -->
+  <path d="M150 350 L650 350 L600 220 L200 220 Z" fill="#292524" stroke="#44403c" stroke-width="2"/>
+  <path d="M200 220 L600 220 L550 120 L250 120 Z" fill="#44403c" stroke="#57534e" stroke-width="2"/>
   
-  <!-- Crown / Leadership Symbol -->
-  <path d="M350 180 L350 100 L400 140 L450 100 L450 180 Z" fill="none" stroke="url(#grad_gold)" stroke-width="6" stroke-linejoin="round"/>
-  <circle cx="350" cy="90" r="6" fill="#fcd34d"/>
-  <circle cx="450" cy="90" r="6" fill="#fcd34d"/>
-  <circle cx="400" cy="130" r="6" fill="#fcd34d"/>
+  <!-- Crown - Larger -->
+  <path d="M320 160 L320 60 L400 110 L480 60 L480 160 Z" fill="none" stroke="url(#grad_gold)" stroke-width="8" stroke-linejoin="round"/>
+  <circle cx="320" cy="50" r="10" fill="#fcd34d"/>
+  <circle cx="480" cy="50" r="10" fill="#fcd34d"/>
+  <circle cx="400" cy="100" r="10" fill="#fcd34d"/>
   
-  <!-- Rays of Light -->
-  <path d="M400 140 L400 50" stroke="url(#grad_gold)" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
-  <path d="M400 140 L320 60" stroke="url(#grad_gold)" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
-  <path d="M400 140 L480 60" stroke="url(#grad_gold)" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
-
-  <!-- Text -->
-  <text x="400" y="410" font-family="serif" font-size="24" fill="#d6d3d1" text-anchor="middle" letter-spacing="2">EXECUTIVE CLASS</text>
+  <!-- Text - Much Larger -->
+  <text x="400" y="420" font-family="serif" font-size="40" fill="#d6d3d1" text-anchor="middle" letter-spacing="4" font-weight="bold">EXECUTIVE CLASS</text>
 </svg>`;
 
-// 5. Research (UPDATED) - Academic Blue & Paper
+// 6. Research - Text Upscaled
 const researchSvg = `
 <svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -169,30 +232,29 @@ const researchSvg = `
   <rect width="800" height="450" fill="#f1f5f9"/>
   
   <!-- Paper Sheet -->
-  <rect x="200" y="50" width="400" height="350" fill="url(#grad_paper)" rx="4" shadow="0 4 6 rgba(0,0,0,0.1)"/>
-  <path d="M200 50 L600 50 L600 400 L200 400 Z" fill="none" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="150" y="40" width="500" height="370" fill="url(#grad_paper)" rx="8" shadow="0 4 6 rgba(0,0,0,0.1)"/>
+  <path d="M150 40 L650 40 L650 410 L150 410 Z" fill="none" stroke="#cbd5e1" stroke-width="2"/>
   
-  <!-- Content Lines on Paper -->
-  <rect x="240" y="90" width="150" height="20" rx="2" fill="#334155"/>
-  <rect x="240" y="130" width="320" height="8" rx="2" fill="#94a3b8"/>
-  <rect x="240" y="150" width="300" height="8" rx="2" fill="#94a3b8"/>
-  <rect x="240" y="170" width="310" height="8" rx="2" fill="#94a3b8"/>
+  <!-- Content Lines - Thicker -->
+  <rect x="200" y="90" width="200" height="30" rx="4" fill="#334155"/>
+  <rect x="200" y="140" width="400" height="12" rx="4" fill="#94a3b8"/>
+  <rect x="200" y="170" width="380" height="12" rx="4" fill="#94a3b8"/>
   
-  <!-- Charts on Paper -->
-  <rect x="240" y="220" width="40" height="100" fill="#60a5fa" opacity="0.5"/>
-  <rect x="300" y="250" width="40" height="70" fill="#60a5fa" opacity="0.7"/>
-  <rect x="360" y="180" width="40" height="140" fill="#3b82f6"/>
+  <!-- Charts - Larger -->
+  <rect x="200" y="240" width="60" height="120" fill="#60a5fa" opacity="0.5"/>
+  <rect x="280" y="280" width="60" height="80" fill="#60a5fa" opacity="0.7"/>
+  <rect x="360" y="200" width="60" height="160" fill="#3b82f6"/>
   
-  <!-- Magnifying Glass -->
-  <g transform="translate(450, 250) rotate(-45)">
-    <circle cx="0" cy="0" r="50" fill="#ffffff" stroke="#0f172a" stroke-width="8" opacity="0.8"/>
-    <circle cx="0" cy="0" r="42" fill="#bae6fd" opacity="0.3"/>
-    <rect x="-10" y="50" width="20" height="60" rx="5" fill="#0f172a"/>
+  <!-- Magnifying Glass - Larger -->
+  <g transform="translate(550, 280) rotate(-45)">
+    <circle cx="0" cy="0" r="70" fill="#ffffff" stroke="#0f172a" stroke-width="10" opacity="0.9"/>
+    <circle cx="0" cy="0" r="60" fill="#bae6fd" opacity="0.3"/>
+    <rect x="-15" y="70" width="30" height="80" rx="8" fill="#0f172a"/>
   </g>
   
   <!-- Tag -->
-  <rect x="620" y="380" width="140" height="40" rx="20" fill="#2563eb"/>
-  <text x="690" y="405" font-family="sans-serif" font-size="14" fill="white" font-weight="bold" text-anchor="middle">RESEARCH</text>
+  <rect x="620" y="380" width="160" height="50" rx="25" fill="#2563eb"/>
+  <text x="700" y="415" font-family="sans-serif" font-size="24" fill="white" font-weight="bold" text-anchor="middle">RESEARCH</text>
 </svg>`;
 
 
@@ -277,6 +339,32 @@ export const WORK_EXPERIENCE_DATA: Experience[] = [
 ];
 
 export const PROJECTS_DATA: Project[] = [
+  // 1순위: (신규) 팀 Silo 방지 및 협업 활성화 프로젝트
+  {
+      id: 9,
+      title: '팀 Silo 방지 및 협업 활성화 프로젝트',
+      context: '멋쟁이사자처럼',
+      description: '팀간 소통 단절(Silo Effect)을 해결하고, 전사적 협업 문화를 정착시키기 위한 조직문화 개선 프로젝트입니다. 그룹 데일리 스크럼을 통해 협업문화 정착과 내부 이슈를 빠르게 전파할 수 있는 환경을 조성하였습니다.',
+      tags: ['조직문화 개선', '협업 프로세스', 'Agile', '소통 활성화'],
+      thumbnailImage: `data:image/svg+xml;base64,${toBase64(siloSvg)}`,
+      detailImages: [
+         { url: getDetailImg('타운홀 미팅'), caption: '전사 타운홀 미팅' },
+         { url: getDetailImg('협업 툴 가이드'), caption: '협업 가이드라인' }
+      ],
+      details: [
+        '소개, 기간, 역할: Silo Effect 타파 및 협업 문화 조성 프로젝트 (2025.3 ~ 2025.8, 스크럼 리딩)',
+        '문제 상황/해결: 조직 변경 및 신규인력 유입으로 부서 간 소통 부재 및 정보 차단. 전사 데일리 스크럼을 도입하여 정보가 실시간으로 흐를 수 있는 투명한 소통 환경 조성',
+        {
+          title: 'Action',
+          items: [
+            '데일리 스크럼 프로세스 정착: 매일 오전 오늘의 업무, 공유 사항, 이슈를 짧게 공유하는 루틴 수립',
+            '의사결정 문화 개선: 보고형 회의를 지양하고, 현장에서 실무 고민을 즉시 논의하여 해결책을 찾는 방식 장려',
+            '이슈 및 인사이트 공유: 성과나 문제 발생 시 각 팀의 해결 노하우를 즉각 공유하여 유사 문제 재발 방지 및 성공 사례 확산'
+          ]
+        }
+      ]
+  },
+  // 2순위: IT 부트캠프 (822명 배출)
   {
     id: 1,
     title: '대규모 IT 부트캠프 기획 및 성장 견인',
@@ -285,7 +373,7 @@ export const PROJECTS_DATA: Project[] = [
     tags: ['교육과정 설계', '매출 100억', '수료율 100%','만족도 4.9/5'],
     thumbnailImage: `data:image/svg+xml;base64,${toBase64(bootcampSvg)}`,
     detailImages: [
-        { url: 'https://lh3.googleusercontent.com/d/1I2CWOU6RV-4ge_JrTORcUnC-E7Cvuh0k', caption: '온라인 부트캠프(zoom)' },
+        { url: 'https://lh3.googleusercontent.com/d/15gEzXkZnVuHx8_PHN3IX9ovaDVx9hzNB', caption: '수료식' },
         { url: 'https://lh3.googleusercontent.com/d/1www-PKnZ7Wg86gZ5gDGB-lIoNbxIds-2', caption: '오프라인 네트워킹' },
         { url: 'https://lh3.googleusercontent.com/d/1VlBs81W0nuRmC0bWLtjm1ZG0jBnW3vvM', caption: '교육만족도(4.9/5)' }
     ],
@@ -296,10 +384,12 @@ export const PROJECTS_DATA: Project[] = [
           title: 'Action',
           items: [
             'Agile Learning 프레임워크 적용: 주 단위 정량/정성 데이터 분석을 통한 교육 과정 개선',
+            '백워드 설계(Backward Design) 프레임워크 적용 : 코딩 역량 향상에 집중된 커리큘럼 설계',
             '피어그룹 활동: 동료 피드백 시스템 개발 및 개인 학습 결과 리포트 제공으로 메타인지 강화',
-            '커뮤니티 구축: 24시간 온라인 학습 환경(Notion, Discord) 설계 및 회고/스터디/동료 특강 활성화',
+            '학습 커뮤니티 구축: 24시간 온라인 학습 환경(Notion, Discord) 설계 및 회고/스터디/동료 특강 활성화',
+            '데이터 기반의 교육생 이탈 방지 시스템 : 주 단위 진행하는 교육생 설문 분석과 실시간 모니터링을 통하여 이탈 징후를 조기에 포착하고 즉각적인 멘토링 or 상담 실행',
             '커리큘럼 고도화: 현직자 인터뷰 및 기술 트렌드 분석 기반 최신 스택 도입 (React → TypeScript → Next.js)',
-            '리더십/멘토링: 교육생 리더십 강화 프로그램(월 1회) 운영, 리더 역할 가이드 및 갈등 관리 상담',
+            '리더십/멘토링: 교육생 리더십 강화 프로그램(월 1회) 운영, 리더 역할 가이드 및 교육생 갈등 관리 상담',
             '특강 기획: 수준별 맞춤 스프린트 특강, 현직자 하드/소프트 스킬(협업, 커뮤니케이션) 특강 운영',
             '선발 체계: 구조화된 지원서, 영상 평가, 기초 역량 측정을 도입하여 교육생 수준 상향 평준화',
             '취업 지원: 메타버스(게더타운) 활용 기업 채용연계 행사 기획 및 운영'
@@ -307,31 +397,7 @@ export const PROJECTS_DATA: Project[] = [
         }
     ]
   },
-  {
-    id: 2,
-    title: 'B2G IT 교육 사업 제안 및 수주',
-    context: '멋쟁이사자처럼',
-    description: '고용노동부 주관 사업에서 총 4개 과제에 모두 선정되어 100% 수주 성공률을 기록했습니다. 데이터 기반의 제안 전략으로 200억 원 이상의 기대 매출을 확보했습니다.',
-    tags: ['RFP 분석', '제안서 기획', '시장 분석', '프레젠테이션'],
-    thumbnailImage: `data:image/svg+xml;base64,${toBase64(proposalSvg)}`,
-    detailImages: [
-        { url: 'https://lh3.googleusercontent.com/d/1owMUvqaaO2o17PZAFi8Jbgpb_jJLezeu', caption: '2023 선정 과정' },
-        { url: 'https://lh3.googleusercontent.com/d/1fO7FNrx79OqLc2Z_YkvAWpNi5JufCvBY', caption: '제안서 운영전략 파트' }
-    ],
-    details: [
-        '소개, 기간, 역할: IT 교육사업 제안서 기획 및 작성 (2021, 2023, 2024, 부트캠프 제안서 작성/PT)',
-        '문제 상황/해결: 경쟁사가 급격하게 증가하고 있는 상황에서 사업수주를 위한 전략이 필요한 상황, 기존 운영 데이터를 활용하여 차별화된 제안서 작성, 총 4건의 제안서 모두 최종 승인 획득 (수주율 100%) 및 기대 매출 200억 원 이상 달성',
-        {
-          title: 'Action',
-          items: [
-                '전략적 RFP 분석: 정책특화심사센터, 고용정보원 등 유관 기관과의 지속적 소통을 통해 RFP 핵심 요구사항 도출',
-                '시장 및 정책 분석: IT 교육 트렌드, B2G 시장 규모, 경쟁사 현황 및 정부 정책 방향성 심층 분석',
-                '제안 전략 수립: 교육 운영 데이터를 기반으로 한 차별화된 제안 논리 개발',
-                '최종 발표: 핵심 가치 전달을 위한 경쟁 PT 기획 및 질의응답 대응'
-             ]
-        }
-    ]
-  },
+  // 3순위: 한국 엡손 기술 해커톤
   {
     id: 5,
     title: '엡손(EPSON) 기업 해커톤 운영 총괄',
@@ -359,6 +425,58 @@ export const PROJECTS_DATA: Project[] = [
         }
     ]
   },
+  // 4순위: 전사 교육 프로세스 표준화(SOP)
+  {
+    id: 8,
+    title: '사내 업무 SOP 구축 및 교육',
+    context: '멋쟁이사자처럼',
+    description: 'KDT(K-Digital Training) 6개 교육과정의 전체 행정 업무를 총괄하며, 복잡하고 산발적이던 교육 행정 프로세스를 체계화하고 표준화한 프로젝트입니다.',
+    tags: ['프로세스 표준화', 'SOP 개발', '사내 교육', '행정 효율화'],
+    thumbnailImage: `data:image/svg+xml;base64,${toBase64(sopSvg)}`,
+    detailImages: [
+        { url: 'https://lh3.googleusercontent.com/d/1E0nTEkyRrJBF8VY0AZ1kEUrd6CrFB_hc', caption: '워크플로우 시각화' },
+        { url: 'https://lh3.googleusercontent.com/d/1Z-_-kSieX2MOkuH_dOYRdRDko4CM11sx', caption: '내부 교육' }
+    ],
+    details: [
+        '소개, 기간, 역할: 교육 행정 및 운영 프로세스를 체계화하고 표준화하기 위한 내부 프로젝트 (2022.3 ~ 2022.5, SOP 구축 및 교육)',
+        '문제 상황/해결: 개인의 경험에 의존하던 업무 방식으로 인해 발생한 품질 편차로 사업 확대에 따른 리스크 증가, 행정 프로세스 표준화(SOP) 및 매뉴얼화, 사내 교육 진행으로 진입장벽 낮춤',
+        {
+            title: 'Action (수행 내용)',
+            items: [
+                '프로세스 설계: 워크플로우 분석, 용어 정의, 단계별 SOP(표준 운영 절차) 시스템 구축',
+                '매뉴얼 개발: 업무 노하우를 문서화하고, 신규 입사자용 온보딩 가이드 제작',
+                '사내 교육: 제작된 매뉴얼을 기반으로 정기 그룹 세미나 및 프레젠테이션 진행'
+            ]
+        },
+    ]
+  },
+  // 5순위: B2G 제안
+  {
+    id: 2,
+    title: 'B2G IT 교육 사업 제안 및 수주',
+    context: '멋쟁이사자처럼',
+    description: '고용노동부 주관 사업에서 총 4개 과제에 모두 선정되어 100% 수주 성공률을 기록했습니다. 데이터 기반의 제안 전략으로 200억 원 이상의 기대 매출을 확보했습니다.',
+    tags: ['RFP 분석', '제안서 기획', '시장 분석', '프레젠테이션'],
+    thumbnailImage: `data:image/svg+xml;base64,${toBase64(proposalSvg)}`,
+    detailImages: [
+        { url: 'https://lh3.googleusercontent.com/d/1owMUvqaaO2o17PZAFi8Jbgpb_jJLezeu', caption: '2023 선정 과정' },
+        { url: 'https://lh3.googleusercontent.com/d/1fO7FNrx79OqLc2Z_YkvAWpNi5JufCvBY', caption: '제안서 운영전략 파트' }
+    ],
+    details: [
+        '소개, 기간, 역할: IT 교육사업 제안서 기획 및 작성 (2021, 2023, 2024, 부트캠프 제안서 작성/PT)',
+        '문제 상황/해결: 경쟁사가 급격하게 증가하고 있는 상황에서 사업수주를 위한 전략이 필요한 상황, 기존 운영 데이터를 활용하여 차별화된 제안서 작성, 총 4건의 제안서 모두 최종 승인 획득 (수주율 100%) 및 기대 매출 200억 원 이상 달성',
+        {
+          title: 'Action',
+          items: [
+                '전략적 RFP 분석: 정책특화심사센터, 고용정보원 등 유관 기관과의 지속적 소통을 통해 RFP 핵심 요구사항 도출',
+                '시장 및 정책 분석: IT 교육 트렌드, B2G 시장 규모, 경쟁사 현황 및 정부 정책 방향성 심층 분석',
+                '제안 전략 수립: 교육 운영 데이터를 기반으로 한 차별화된 제안 논리 개발',
+                '최종 발표: 핵심 가치 전달을 위한 경쟁 PT 기획 및 질의응답 대응'
+             ]
+        }
+    ]
+  },
+  // 6순위: VIP 교육
   {
     id: 7,
     title: 'C-Level 대상 프리미엄 경영자 과정 기획/운영',
@@ -386,6 +504,7 @@ export const PROJECTS_DATA: Project[] = [
         }
     ]
   },
+  // 7. 학술 연구 (언급되지 않았지만 기존 데이터 유지)
   {
     id: 6,
     title: '학술 연구 및 데이터 분석',
@@ -400,7 +519,7 @@ export const PROJECTS_DATA: Project[] = [
         { url: 'https://lh3.googleusercontent.com/d/1YYdrjo0u92UqjG6s0SbMukm6touIjqtV', caption: '모바일 쇼핑 VOC 연구2' }
     ],
     details: [
-        '주요 연구: 페이스북 마케팅(소비자 분석), AR 앱 UX(소비자 분석), 모바일 디스플레이 색채 감성(고객 VoC)',
+        '주요 연구: 페이스북 마케팅(소비자 분석), AR 앱 UX(소비자 분석), 모바일 디스플레이 색채 감성(고객 VOC)',
         '연구 전 과정(설문 설계, 데이터 수집, 통계 분석, 결과 도출) 주도적 수행',
         '통계 분석 도구(SPSS) 활용 및 데이터 해석 역량 보유'
     ]

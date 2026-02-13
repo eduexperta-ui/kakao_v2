@@ -17,7 +17,7 @@ const ExperienceCard: React.FC<{ experience: ExperienceType }> = ({ experience }
       
       <div className="z-10 sm:col-span-6">
         <h3 className="font-semibold leading-snug text-gray-900 dark:text-gray-100">
-          <div className="inline-flex items-baseline font-semibold leading-tight text-gray-900 dark:text-gray-100 text-base md:text-lg">
+          <div className="inline-flex items-baseline font-semibold leading-tight text-gray-900 dark:text-gray-100 text-xl md:text-2xl">
             <span className="break-keep">
               {experience.title} <span className="text-brand dark:text-brand/80 mx-1">·</span> <span className="inline-block">{experience.company}</span>
             </span>
@@ -25,16 +25,16 @@ const ExperienceCard: React.FC<{ experience: ExperienceType }> = ({ experience }
         </h3>
         
         {isDescriptionArray ? (
-          <ul className="mt-4 space-y-2.5">
+          <ul className="mt-5 space-y-3">
             {(experience.description as string[]).map((item, idx) => (
-              <li key={idx} className="text-sm leading-relaxed text-gray-600 dark:text-gray-400 flex items-start">
-                <span className="mt-[7px] mr-3 w-[5px] h-[5px] rounded-full bg-brand dark:bg-brand/70 flex-shrink-0"></span>
+              <li key={idx} className="text-lg leading-relaxed text-gray-600 dark:text-gray-400 flex items-start">
+                <span className="mt-[10px] mr-3 w-[6px] h-[6px] rounded-full bg-brand dark:bg-brand/70 flex-shrink-0"></span>
                 <span className="flex-1 break-keep">{item}</span>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400 break-keep">
+          <p className="mt-4 text-lg leading-relaxed text-gray-600 dark:text-gray-400 break-keep">
             {experience.description}
           </p>
         )}
@@ -54,7 +54,7 @@ const Experience: React.FC = () => {
       className={`py-16 md:py-24 transition-all duration-700 ease-in-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
     >
       <SectionTitle className="mb-12 md:mb-16">Work Experience</SectionTitle>
-      <div className="group/list space-y-10 md:space-y-12">
+      <div className="group/list space-y-10 md:space-y-14">
         {WORK_EXPERIENCE_DATA.map((exp, index) => (
           <ExperienceCard key={index} experience={exp} />
         ))}

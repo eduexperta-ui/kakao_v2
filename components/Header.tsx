@@ -18,7 +18,7 @@ const NAV_LINKS = [
 const ThemeToggle: React.FC<Pick<HeaderProps, 'theme' | 'toggleTheme'>> = ({ theme, toggleTheme }) => (
   <button
     onClick={toggleTheme}
-    className="w-10 h-10 flex items-center justify-center rounded-full text-gray-500 hover:text-yellow-600 dark:hover:text-[#FEE500] transition-colors focus:outline-none focus:ring-2 focus:ring-brand"
+    className="w-10 h-10 flex items-center justify-center rounded-full text-gray-600 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-[#FEE500] transition-colors focus:outline-none focus:ring-2 focus:ring-brand"
     aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
   >
     {theme === 'dark' ? (
@@ -59,28 +59,28 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center">
-            <nav className="flex items-center gap-x-8">
+            <nav className="flex items-center gap-x-10">
               {NAV_LINKS.map(link => (
                 <a 
                     key={link.name} 
                     href={link.href} 
-                    className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-[#FEE500] transition-colors"
+                    className="text-lg font-bold text-gray-700 dark:text-gray-200 hover:text-yellow-600 dark:hover:text-[#FEE500] transition-colors"
                 >
                   {link.name}
                 </a>
               ))}
             </nav>
-            <div className="flex items-center gap-x-2 ml-16">
+            <div className="flex items-center gap-x-3 ml-12 border-l border-gray-300 dark:border-neutral-700 pl-8">
               <button 
                 onClick={() => setPopupType('phone')} 
-                className="p-2 rounded-full text-gray-500 hover:text-yellow-600 dark:hover:text-[#FEE500] transition-colors focus:outline-none focus:ring-2 focus:ring-brand" 
+                className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-[#FEE500] transition-colors focus:outline-none focus:ring-2 focus:ring-brand" 
                 aria-label="Open phone contact"
               >
                 {Icons.phone}
               </button>
               <button 
                 onClick={() => setPopupType('email')} 
-                className="p-2 rounded-full text-gray-500 hover:text-yellow-600 dark:hover:text-[#FEE500] transition-colors focus:outline-none focus:ring-2 focus:ring-brand" 
+                className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-[#FEE500] transition-colors focus:outline-none focus:ring-2 focus:ring-brand" 
                 aria-label="Open email contact"
               >
                 {Icons.email}

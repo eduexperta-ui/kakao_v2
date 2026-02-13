@@ -12,9 +12,9 @@
           theme = localStorage.getItem('theme');
         } catch (e) { }
         
-        // 사용자가 명시적으로 설정한 값이 없으면 무조건 'light' 모드로 시작
+        // 사용자가 명시적으로 설정한 값이 없으면 'dark' 모드로 시작 (개발자 포트폴리오 권장)
         if (!theme) {
-          theme = 'light';
+          theme = 'dark';
         }
         
         if (theme === 'dark') {
@@ -34,7 +34,7 @@
               brand: '#FEE500', // Kakao Yellow
             },
             fontFamily: {
-              sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+              sans: ['Kakao', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
             },
           },
         },
