@@ -278,17 +278,17 @@ export const SKILLS_DATA: Skill[] = [
   { 
     name: '교육과정 설계', 
     icon: Icons.curriculum,
-    description: 'React, TS, Next.js 등 최신 기술 트렌드를 반영한 커리큘럼 고도화'
+    description: 'React, TS, Next.js / Claude, Cursor,Framer 등 최신 기술 트렌드 및 AI를 반영한 커리큘럼 고도화'
   },
   { 
     name: '학습 경험(LX) 디자인', 
     icon: Icons.lx_design,
-    description: "주 단위 정량/정성 데이터(Survey, 성취도) 분석하여 실시간 학습경험 개선, '동료 특강' 세션을 통한 능동적인 학습 환경 조성"
+    description: "교육생 중심의 학습경험 고도화, 동료 특강, 회고조 운영을 통한 능동적인 학습 환경 빌드"
   },
   { 
     name: '프로젝트 관리', 
     icon: Icons.project_management,
-    description: '100명 규모 해커톤 및 메타버스 채용 행사, 부트캠프 총괄 운영 등 대규모 프로젝트 완수'
+    description: '100명 규모 해커톤 및 메타버스 채용 행사, 부트캠프 총괄 등 대규모 프로젝트 완수'
   },
   { 
     name: '팀 리더십', 
@@ -303,7 +303,7 @@ export const SKILLS_DATA: Skill[] = [
   { 
     name: '파트너 매니지먼트, 커뮤니케이션', 
     icon: Icons.partnership,
-    description: '교육생, 강사/멘토, 파트너사, 정부 기관 등 이해관계자의 요구사항 유연하게 조율'
+    description: '교육생, 강사/멘토, 파트너사, 기관 등 이해관계자의 요구사항 유연하게 조율'
   },
 ];
 
@@ -348,7 +348,7 @@ export const PROJECTS_DATA: Project[] = [
       tags: ['조직문화 개선', '협업 프로세스', 'Agile', '소통 활성화'],
       thumbnailImage: `data:image/svg+xml;base64,${toBase64(siloSvg)}`,
       detailImages: [
-         { url: 'https://lh3.googleusercontent.com/d/1dTQ4sl6abbaEU5rhhA5vwuqtwSGToogU', caption: '데일리 스크럼 기대효과 발표 장표' },
+         { url: 'https://lh3.googleusercontent.com/d/1rQUtPA3k9OFhhq9bjsmQOQjNmnq5ndTR', caption: '데일리 스크럼 기대효과 발표 장표' },
          { url: 'https://lh3.googleusercontent.com/d/1SYjGNR5ccFkz356uod8Z0NZqZKcIvblj', caption: '인사이트 공유 미팅' }
       ],
       details: [
@@ -367,7 +367,7 @@ export const PROJECTS_DATA: Project[] = [
   // 2순위: IT 부트캠프 (822명 배출)
   {
     id: 1,
-    title: '대규모 IT 부트캠프 기획 및 성장 견인',
+    title: '대규모 IT 부트캠프 시스템 빌드',
     context: '멋쟁이사자처럼',
     description: '프론트엔드, 디자인 부트캠프 누적 교육생 902명, 수료생 822명을 배출하며 누적 매출 100억 원을 달성했습니다. 학습자 중심의 교육 시스템을 구축하여 최고 수료율 100%, 만족도 4.9/5이라는 높은 성과를 달성했습니다.',
     tags: ['교육과정 설계', '매출 100억', '수료율 100%','만족도 4.9/5'],
@@ -375,7 +375,7 @@ export const PROJECTS_DATA: Project[] = [
     detailImages: [
         { url: 'https://lh3.googleusercontent.com/d/15gEzXkZnVuHx8_PHN3IX9ovaDVx9hzNB', caption: '수료식' },
         { url: 'https://lh3.googleusercontent.com/d/1www-PKnZ7Wg86gZ5gDGB-lIoNbxIds-2', caption: '오프라인 네트워킹' },
-        { url: 'https://lh3.googleusercontent.com/d/1VlBs81W0nuRmC0bWLtjm1ZG0jBnW3vvM', caption: '교육만족도(4.9/5)' }
+        { url: 'https://lh3.googleusercontent.com/d/1k3jilluaQq0f43Jtofc7toZBamtioRI4', caption: '교육만족도(4.9/5)' }
     ],
     details: [
         '소개, 기간, 역할: 국가 전략산업 IT인재 양성 B2G 부트캠프 기획 및 운영 (2021.7~2024.12, 총괄 PM)',
@@ -428,10 +428,10 @@ export const PROJECTS_DATA: Project[] = [
   // 4순위: 전사 교육 프로세스 표준화(SOP)
   {
     id: 8,
-    title: '사내 업무 SOP 구축 및 교육',
+    title: '사내 업무 표준화(SOP) 및 온보딩 가이드',
     context: '멋쟁이사자처럼',
     description: 'KDT(K-Digital Training) 6개 교육과정의 전체 행정 업무를 총괄하며, 복잡하고 산발적이던 교육 행정 프로세스를 체계화하고 표준화한 프로젝트입니다.',
-    tags: ['프로세스 표준화', 'SOP 개발', '사내 교육', '행정 효율화'],
+    tags: ['프로세스 표준화', 'SOP 구축', '사내 교육', '행정 효율화'],
     thumbnailImage: `data:image/svg+xml;base64,${toBase64(sopSvg)}`,
     detailImages: [
         { url: 'https://lh3.googleusercontent.com/d/1E0nTEkyRrJBF8VY0AZ1kEUrd6CrFB_hc', caption: '워크플로우 시각화' },
@@ -498,7 +498,7 @@ export const PROJECTS_DATA: Project[] = [
                 '신규 사업 기획: 베트남 비즈니스 최고경영자 과정 1기 런칭 및 운영 (매출 4억 원 달성)',
                 '마케팅 최적화: 이메일 마케팅 자동화 프로세스 구축 및 사내 교육 (지원율 10% 상승, 비용 20% 절감)',
                 '커리큘럼 리뉴얼: 문화예술/인문학 과정 콘텐츠 개선을 통한 교육생 만족도 10% 상승',
-                '행사 운영: 국내/해외 워크숍 및 대규모 입학/수료식 행사 기획 (예산 수립, 장소 섭외, 의전, 시나리오)',
+                '행사 운영: 국내/해외 워크숍 및 대규모 입학/수료식 행사 기획 (예산 수립, 장소 섭외, 시나리오)',
                 '홍보 마케팅: 타겟 DB 최적화, 지면 신문 보도자료 작성(조선, 동아, 매일경제 등)'
             ]
         }
@@ -530,8 +530,8 @@ export const PERSONAL_INFO = {
     name: '김태진 입니다.',
     title_line1: '인재의 잠재력을',
     title_line2: '성장으로 이끌어내는',
-    title_line3: 'Data 기반 Tech 교육 전문가',
-    bio: '학습자 중심의 정교한 LX 설계와 성장 병목을 파악하는 데이터 분석역량을 기반으로 교육의 A to Z를 총괄합니다. 4개 기수 100% 수료를 이끌어낸 압도적인 운영 전문성과 20개가 넘는 IT 교육사업 경험, 융합적 배경을 바탕으로 조직의 비즈니스 가치와 연결되는 테크 교육 모델을 설계하고 운영합니다.',
+    title_line3: 'Data 기반 Tech 교육 빌더',
+    bio: '학습자 중심의 정교한 LX 설계와 성장 병목을 파악하는 데이터 분석역량을 기반으로 교육의 A to Z를 총괄합니다. 4개 기수 100% 수료를 직접 이끌어낸 압도적인 실무 전문성과 20개가 넘는 IT 교육사업 경험, 융합적 배경을 바탕으로 조직의 비즈니스 가치와 연결되는 테크 교육 모델을 설계하고 운영합니다.',
     email: 'eduexperta@gmail.com',
     phone: '010-4154-4898',
     // Stable Google Drive Image Link

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { Project } from '../types';
+import ImageModal from './ImageModal';
 
 // Sub-component for rendering details list to cleaner code
 const DetailList: React.FC<{ details: Project['details'] }> = ({ details }) => {
@@ -31,8 +32,9 @@ const DetailList: React.FC<{ details: Project['details'] }> = ({ details }) => {
 // Sub-component for rendering images with hover zoom effect
 const DetailGallery: React.FC<{ 
     images: Project['detailImages']; 
-    title: string; 
-}> = ({ images, title }) => {
+    title: string;
+    onImageClick: (src: string) => void;
+}> = ({ images, title, onImageClick }) => {
   if (!images || images.length === 0) return null;
 
   return (
@@ -40,7 +42,11 @@ const DetailGallery: React.FC<{
       {images.map((imgItem, index) => (
         <div key={index} className="flex flex-col space-y-3 group/image">
           <div 
-            className="relative aspect-video rounded-lg border border-gray-200/10 bg-gray-800 overflow-hidden shadow-sm group-hover/image:shadow-md transition-all group/zoom"
+            className="relative aspect-video rounded-lg border border-gray-200/10 bg-gray-800 overflow-hidden shadow-sm group-hover/image:shadow-md transition-all group/zoom cursor-zoom-in"
+            onClick={(e) => {
+              e.stopPropagation();
+              onImageClick(imgItem.url);
+            }}
           >
             <img
               src={imgItem.url}
@@ -67,72 +73,89 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const { title, description, tags, thumbnailImage, details, context, detailImages } = project;
   const [isExpanded, setIsExpanded] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-        {/* Hover Background Effect */}
-        <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-lg transition motion-reduce:transition-none md:block group-hover:bg-gray-100/80 group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] group-hover:drop-shadow-lg dark:group-hover:bg-neutral-800/50 dark:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] dark:group-hover:drop-shadow-lg"></div>
-        
-        {/* Thumbnail Section */}
-        {thumbnailImage && (
-            <div className="z-10 sm:order-1 sm:col-span-2 sm:mt-1">
-            <div 
-                className="relative aspect-video w-full rounded-lg border-2 border-gray-200/10 transition group-hover:border-gray-200/30 sm:mx-0 bg-gray-800 overflow-hidden shadow-sm group/thumb"
-            >
-                <img 
-                    src={thumbnailImage} 
-                    alt={`${title} project thumbnail`} 
-                    loading="lazy" 
-                    decoding="async" 
-                    className="absolute inset-0 w-full h-full object-cover" 
-                />
-            </div>
-            </div>
-        )}
+    <>
+      <div className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+          {/* Hover Background Effect */}
+          <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-lg transition motion-reduce:transition-none md:block group-hover:bg-gray-100/80 group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] group-hover:drop-shadow-lg dark:group-hover:bg-neutral-800/50 dark:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] dark:group-hover:drop-shadow-lg"></div>
+          
+          {/* Thumbnail Section */}
+          {thumbnailImage && (
+              <div className="z-10 sm:order-1 sm:col-span-2 sm:mt-1">
+              <div 
+                  className="relative aspect-video w-full rounded-lg border-2 border-gray-200/10 transition group-hover:border-gray-200/30 sm:mx-0 bg-gray-800 overflow-hidden shadow-sm group/thumb cursor-zoom-in"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedImage(thumbnailImage);
+                  }}
+              >
+                  <img 
+                      src={thumbnailImage} 
+                      alt={`${title} project thumbnail`} 
+                      loading="lazy" 
+                      decoding="async" 
+                      className="absolute inset-0 w-full h-full object-cover" 
+                  />
+              </div>
+              </div>
+          )}
 
-        {/* Content Section */}
-        <div className="z-10 sm:order-2 sm:col-span-6">
-            {context && (
-            <div className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">
-                {context}
-            </div>
-            )}
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
-            <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">{description}</p>
-            
-            {/* Tags - Font size increased to text-sm */}
-            <div className="flex flex-wrap gap-2 mb-5">
-            {tags.map((tag) => (
-                <span key={tag} className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-200 text-sm font-semibold px-3 py-1 rounded-full border border-yellow-200 dark:border-yellow-800">
-                {tag}
-                </span>
-            ))}
-            </div>
+          {/* Content Section */}
+          <div className="z-10 sm:order-2 sm:col-span-6">
+              {context && (
+              <div className="text-xs font-semibold uppercase tracking-wide text-gray-500 mb-2">
+                  {context}
+              </div>
+              )}
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3">{title}</h3>
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-400 mb-5 leading-relaxed">{description}</p>
+              
+              {/* Tags - Font size increased to text-sm */}
+              <div className="flex flex-wrap gap-2 mb-5">
+              {tags.map((tag) => (
+                  <span key={tag} className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-200 text-sm font-semibold px-3 py-1 rounded-full border border-yellow-200 dark:border-yellow-800">
+                  {tag}
+                  </span>
+              ))}
+              </div>
 
-            {/* Expandable Details */}
-            {details && details.length > 0 && (
-            <div>
-                <button 
-                onClick={() => setIsExpanded(!isExpanded)} 
-                className="inline-flex items-center space-x-2 text-base font-bold text-yellow-600 dark:text-[#FEE500] hover:underline focus:outline-none"
-                aria-expanded={isExpanded}
-                >
-                <span>{isExpanded ? '간략히 보기' : '자세히 보기'}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                </button>
-                <div 
-                className={`transition-all duration-500 ease-in-out overflow-hidden ${isExpanded ? 'max-h-[3000px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}
-                >
-                <DetailList details={details} />
-                <DetailGallery 
-                    images={detailImages} 
-                    title={title} 
-                />
-                </div>
-            </div>
-            )}
-        </div>
-    </div>
+              {/* Expandable Details */}
+              {details && details.length > 0 && (
+              <div>
+                  <button 
+                  onClick={() => setIsExpanded(!isExpanded)} 
+                  className="inline-flex items-center space-x-2 text-base font-bold text-yellow-600 dark:text-[#FEE500] hover:underline focus:outline-none"
+                  aria-expanded={isExpanded}
+                  >
+                  <span>{isExpanded ? '간략히 보기' : '자세히 보기'}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  </button>
+                  <div 
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${isExpanded ? 'max-h-[3000px] opacity-100 mt-6' : 'max-h-0 opacity-0'}`}
+                  >
+                  <DetailList details={details} />
+                  <DetailGallery 
+                      images={detailImages} 
+                      title={title} 
+                      onImageClick={setSelectedImage}
+                  />
+                  </div>
+              </div>
+              )}
+          </div>
+      </div>
+      
+      {/* Image Modal */}
+      {selectedImage && (
+        <ImageModal 
+          src={selectedImage} 
+          alt={title} 
+          onClose={() => setSelectedImage(null)} 
+        />
+      )}
+    </>
   );
 };
 

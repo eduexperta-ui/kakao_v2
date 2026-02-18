@@ -56,7 +56,7 @@ const About: React.FC = () => {
         <div className="md:col-span-8 space-y-6 text-gray-600 dark:text-gray-400 text-base md:text-lg break-keep">
           {/* Kakao Style Text Color */}
           <p className="font-bold text-2xl md:text-3xl leading-relaxed text-yellow-600 dark:text-[#FEE500]">
-              데이터와 시스템으로 성장을 만들어내는 Tech 교육 전문가, 김태진입니다.
+              데이터와 시스템으로 성장을 만들어내는 Tech 교육 빌더, 김태진입니다.
           </p>
 
           <div className="space-y-2">
@@ -74,9 +74,9 @@ const About: React.FC = () => {
           </div>
 
           <div className="space-y-2">
-              <h3 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-200">성과 중심의 리더십과 조직 최적화</h3>
+              <h3 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-200">팀 커뮤니케이션/협업 문화 최적화</h3>
               <p>
-              협업 중심의 견고한 조직문화를 추구합니다. 안정적이고 지속 가능한 교육사업 운영을 위해 데일리 스크럼을 진행하여 협업 시스템 구축과 업무 생산성을 높였습니다. 그 결과, <strong> 팀원 이탈률 0%(2022~2025)</strong>라는 안정적인 조직을 만들었으며 2023년 교육사업부 1호 우수사원으로 선정되었습니다.
+              협업 중심의 견고한 조직문화를 추구합니다. 안정적이고 지속 가능한 팀을 만들기 위해 데일리 스크럼을 도입하였고 커뮤니케이션/협업 시스템을 내재화하여 업무 생산성을 높였습니다. 그 결과, <strong> 팀원 이탈률 0%(2022~2025)</strong>라는 안정적인 조직을 만들었습니다. 
               </p>
           </div>
           
@@ -90,7 +90,7 @@ const About: React.FC = () => {
           <div className="space-y-2">
               <h3 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-200">변화 적응력과 빠른 실행력</h3>
               <p>
-              4년간 스타트업 현장에서 실시간 피드백을 빠르게 반영하는 실행력을 길렀습니다. VOC를 빠르게 개선한 결과, 3년 매출 100억 원 달성과 브랜드 가치 제고라는 목표를 달성할 수 있었습니다.
+              4년간 스타트업 현장에서 실시간 피드백을 빠르게 반영하는 실행력을 길렀습니다. 고객의 VOC를 빠르게 개선한 결과, 3년 매출 100억 원 달성과 브랜드 가치 제고라는 목표를 달성할 수 있었고 교육사업부 1호 우수사원으로 선정되었습니다.
               </p>
           </div>
         </div>
