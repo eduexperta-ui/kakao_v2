@@ -375,7 +375,8 @@ export const PROJECTS_DATA: Project[] = [
     detailImages: [
         { url: 'https://lh3.googleusercontent.com/d/15gEzXkZnVuHx8_PHN3IX9ovaDVx9hzNB', caption: '수료식' },
         { url: 'https://lh3.googleusercontent.com/d/1www-PKnZ7Wg86gZ5gDGB-lIoNbxIds-2', caption: '오프라인 네트워킹' },
-        { url: 'https://lh3.googleusercontent.com/d/1k3jilluaQq0f43Jtofc7toZBamtioRI4', caption: '교육만족도(4.9/5)' }
+        { url: 'https://lh3.googleusercontent.com/d/1k3jilluaQq0f43Jtofc7toZBamtioRI4', caption: '교육만족도(4.9/5)' },
+        { url: 'https://lh3.googleusercontent.com/d/1u-37XyEBRlW3GTbBqcH1iG5lGVbiE615', caption: '수료생 네트워킹' }
     ],
     details: [
         '소개, 기간, 역할: 국가 전략산업 IT인재 양성 B2G 부트캠프 기획 및 운영 (2021.7~2024.12, 총괄 PM)',
@@ -388,7 +389,7 @@ export const PROJECTS_DATA: Project[] = [
             '피어그룹 활동: 동료 피드백 시스템 개발 및 개인 학습 결과 리포트 제공으로 메타인지 강화',
             '학습 커뮤니티 구축: 24시간 온라인 학습 환경(Notion, Discord) 설계 및 회고/스터디/동료 특강 활성화',
             '데이터 기반의 교육생 이탈 방지 시스템 : 주 단위 진행하는 교육생 설문 분석과 실시간 모니터링을 통하여 이탈 징후를 조기에 포착하고 즉각적인 멘토링 or 상담 실행',
-            '커리큘럼 고도화: 현직자 인터뷰 및 기술 트렌드 분석 기반 최신 스택 도입 (React → TypeScript → Next.js)',
+            '커리큘럼 고도화: 현직자 인터뷰 및 기술 트렌드 분석 기반 최신 기술 스택 도입 (React → TypeScript → Next.js), AI 툴 도입(Claude, Cursor, Framer 등) ',
             '리더십/멘토링: 교육생 리더십 강화 프로그램(월 1회) 운영, 리더 역할 가이드 및 교육생 갈등 관리 상담',
             '특강 기획: 수준별 맞춤 스프린트 특강, 현직자 하드/소프트 스킬(협업, 커뮤니케이션) 특강 운영',
             '선발 체계: 구조화된 지원서, 영상 평가, 기초 역량 측정을 도입하여 교육생 수준 상향 평준화',
