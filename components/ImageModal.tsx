@@ -32,7 +32,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ src, alt, onClose }) => {
       onClick={onClose}
     >
       <div 
-        className="relative w-full max-w-4xl flex items-center justify-center"
+        className="relative w-full max-w-3xl flex items-center justify-center"
         onClick={e => e.stopPropagation()} // Prevent closing when clicking the container
       >
         <button
@@ -47,7 +47,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ src, alt, onClose }) => {
         <img 
           src={src} 
           alt={alt} 
-          className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl bg-white dark:bg-gray-800"
+          className="max-w-full max-h-[65vh] object-contain rounded-lg shadow-2xl bg-white dark:bg-gray-800"
         />
       </div>
     </div>,
