@@ -288,7 +288,7 @@ export const SKILLS_DATA: Skill[] = [
   { 
     name: '프로젝트 관리', 
     icon: Icons.project_management,
-    description: '100명 규모 해커톤 및 메타버스 채용 행사, 부트캠프 총괄 등 대규모 프로젝트 완수'
+    description: '100명 규모 해커톤 및 메타버스 채용 행사, 대규모 부트캠프 100% 수료 등 대규모 프로젝트 완수'
   },
   { 
     name: '팀 리더십', 

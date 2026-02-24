@@ -46,7 +46,7 @@ const WelcomeModal: React.FC<WelcomeModalProps> = ({ onClose }) => {
         </div>
 
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          방문해 주셔서 감사합니다!
+          김태진's 웹 포트폴리오에 <p>방문해 주셔서 감사합니다!
         </h2>
         
         <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-8 break-keep">
